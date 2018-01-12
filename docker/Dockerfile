@@ -13,7 +13,7 @@ MAINTAINER Vladimir Goshev <sunx@sunx.name>
 # uUID - set UID of seafile user, default: 2016
 # uGID - set GID of seafile user, default: 2016
 ENV SEAFILE_SERVER_DIR="/home/seafile" \
-	SEAFILE_VERSION="6.2.2"
+	SEAFILE_VERSION="6.2.3"
 
 # All installation proccess is in build.sh
 # It is possible to do all work via RUN command(s)
@@ -26,7 +26,7 @@ RUN /tmp/build.sh "$SEAFILE_VERSION" "$SEAFILE_SERVER_DIR" && rm /tmp/build.sh
 # Container initialization scripts ()
 COPY docker-run.sh /bin/docker-run
 
-EXPOSE 8000 8082
+EXPOSE 8000 8080 8082
 VOLUME $SEAFILE_SERVER_DIR
 
 USER seafile
